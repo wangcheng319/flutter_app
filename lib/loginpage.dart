@@ -21,6 +21,7 @@ class _LoginPage extends State<LoginPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             new Container(
               margin: const EdgeInsets.all(16),
@@ -33,15 +34,26 @@ class _LoginPage extends State<LoginPage> {
               child: TextField(
                 controller: _controller,
                 decoration: new InputDecoration(
-                  hintText: "请输入用户名",
-                  border: InputBorder.none,
-                ),
+                    icon: Icon(Icons.account_box),
+                    hintText: "请输入用户名",
+                    border: InputBorder.none,
+                    contentPadding: const EdgeInsets.only(
+                        left: -10, top: 5, bottom: 5, right: 10)),
               ),
             ),
             new Container(
               padding: const EdgeInsets.all(16),
               child: TextField(
-                decoration: new InputDecoration(hintText: "请输入密码"),
+                decoration: new InputDecoration(
+                    hintText: "请输入密码aa",
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(
+                            color: Colors.red,
+                            width: 10,
+                            style: BorderStyle.solid),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(4.0))),
+                    contentPadding: const EdgeInsets.all(10)),
               ),
             ),
             new Container(
@@ -53,6 +65,22 @@ class _LoginPage extends State<LoginPage> {
                 textColor: Colors.white,
               ),
             ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                    flex: 1,
+                    child: new Container(
+                      height: 30,
+                      color: Colors.red,
+                    )),
+                Expanded(
+                    flex: 2,
+                    child: new Container(
+                      height: 30,
+                      color: Colors.blue,
+                    ))
+              ],
+            )
           ],
         ),
       ),
