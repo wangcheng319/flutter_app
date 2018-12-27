@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'loginpage.dart';
 import 'secondPage.dart';
+import 'listviewpage.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         home: MyHomePage(title: 'Flutter Demo Home Page'),
         routes: {
           "second_page": (context) => new SecondPage(),
-          "login_page": (context) => new LoginPage()
+          "login_page": (context) => new LoginPage(),
+          "list_view_page":(context)=> new ListViewPage()
         });
   }
 }
@@ -107,5 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void _navToListPage() {}
+  void _navToListPage() {
+    Navigator.pushNamed(context, "list_view_page");
+  }
 }
